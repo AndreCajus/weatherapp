@@ -5,6 +5,14 @@
 1) Install the dependencies present in the “package.json”;
 2) Run the server.js on the main directory “node .\server.js” 
 3) Open browser on "http://localhost:8080/";
+4) Be awere of the API public keys, there is a maximum of requests
+5) Keys are stored on the .env file, change them if needed (API keys)
+
+
+### API keys
+To change the keys it is possible to register and get them at:
+1) geolocation = "https://locationiq.com/"
+2) weather = "https://darksky.net/"
 
 ### Functionalities 
 1) It is possible to add 10 localities without repetitions; 
