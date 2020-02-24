@@ -81,15 +81,16 @@ app.get('/forecast/daily/:city', async (req, res) => {
 // to retrieve the locality forecast for the next 48 hours
 app.get('/forecast/hourly/:lat/:lon', async (req, res) => {
   const timestamp = Date.now();
-  const lat = res.params.lat;
-  const lon = res.params.lon;
   try {
+      const lat = req.params.lat;
+      const lon = req.params.lon;
       const weather_url = `https://api.darksky.net/forecast/${darksky_key}/${lat},${lon}?lang=pt`;
       const weather_response = await fetch(weather_url);
       const weather_data = await weather_response.json();
       res.json((weather_data.hourly.data));
       database.insert(Object.assign( {'method' : 'GET', 'status' : 'SUCCESS', 'rpath' : '/forecast/hourly/:lat/:lon'}, timestamp));
   } catch (err) {
+    console.log(err);
     res.status(400).json({status: 400, message: "Locality does not have related weather information!"});
     database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/hourly/:lat/:lon'}, timestamp));
   }
