@@ -1,6 +1,7 @@
 {"method":"GET","status":"FAILURE","rpath":"/forecast/hourly/:lat/:lon","_id":"0K244sAGXgdOj7ci"}
 {"method":"GET","status":"FAILURE","rpath":"/forecast/hourly/:lat/:lon","_id":"0KdiMREZ9c6NVZQ9"}
 {"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552247150}],"_id":"0WK6CqYnpEPO5d5O"}
+{"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552594691}],"_id":"1knQmS15v7r2OAle"}
 {"method":"GET","status":"FAILURE","rpath":"/forecast/hourly/:lat/:lon","_id":"2MI6sttxXpgTCwir"}
 {"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"2VtG3HNkpVdLu5V1"}
 {"method":"POST","status":"success","body":[{"city":"Porto","city_f":"Porto, Área Metropolitana do Porto, North, 4000-274, Portugal","sunrise":"7:18","sunset":"18:20","temp_min":"8.3","temp_max":"17.6","lat":"41.1494512","lon":"-8.6107884","timestamp":1582552114589}],"_id":"52eZ9lusip5FpmXq"}
@@ -18,6 +19,7 @@
 {"method":"GET","status":"FAILURE","rpath":"/forecast/hourly/:lat/:lon","_id":"Jozwf5QsX1xmiotV"}
 {"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552521840}],"_id":"OcrmLdZzSwzGFRLK"}
 {"method":"POST","status":"success","body":[{"city":"Porto","city_f":"Porto, Área Metropolitana do Porto, North, 4000-274, Portugal","sunrise":"7:18","sunset":"18:20","temp_min":"8.3","temp_max":"17.6","lat":"41.1494512","lon":"-8.6107884","timestamp":1582552259222}],"_id":"RtK8Fp26jVWejy7N"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"S2Bt2ZLF6Eu6gOO2"}
 {"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552488516}],"_id":"VAoiWQrXUpQg8k4s"}
 {"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.8","lat":"40.640496","lon":"-8.6537841","timestamp":1582545135413}],"_id":"WLDJNy2SMOhFZ78U"}
 {"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552091703}],"_id":"X86jtcv46obFUpIW"}
@@ -47,6 +49,11 @@
 {"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"xDU4SVklsX83Ep8o"}
 {"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"y7xR3DxRGNVZZft1"}
 {"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552411552}],"_id":"zmbSeWnchRsxgSsP"}
-{"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"S2Bt2ZLF6Eu6gOO2"}
-{"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552594691}],"_id":"1knQmS15v7r2OAle"}
 {"method":"GET","status":"SUCCESS","rpath":"/forecast/hourly/:lat/:lon","_id":"zs3iT6sikYpdfmXo"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"mlXY9D8Uxk7GQKCR"}
+{"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552663710}],"_id":"Xb9sSjFjcsAMNwO6"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"5D8lB4xwMlgK7TAd"}
+{"method":"POST","status":"success","body":[{"city":"Porto","city_f":"Porto, Área Metropolitana do Porto, North, 4000-274, Portugal","sunrise":"7:18","sunset":"18:20","temp_min":"8.3","temp_max":"17.6","lat":"41.1494512","lon":"-8.6107884","timestamp":1582552667530}],"_id":"U1YdcurJn9RseVXM"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"ddjKuT5Hw3T9PGRB"}
+{"method":"POST","status":"success","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582552742901}],"_id":"PXlFk2tb8iKumwsK"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/hourly/:lat/:lon","_id":"N0iVSs3ROn5Qbche"}
