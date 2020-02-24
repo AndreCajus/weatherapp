@@ -25,8 +25,8 @@
 ### Images
 
 1) Main
-<img src="solutionImages/maini.png">
+<img src="solutionImages/maini.png" style="width: 100%;">
 
 2) Locality 48h forecast
-<img src="solutionImages/localityx.png">
+<img src="solutionImages/localityx.png" style="width: 100%;">
 
