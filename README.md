@@ -4,7 +4,7 @@
 ### Setup
 1) Install the dependencies present in the “package.json”;
 2) Run the server.js on the main directory “node .\server.js” 
-3) Open browser on "http://localhost:8080/";
+3) Open the browser on "http://localhost:8080/";
 4) Be aware of the API public keys, there is a maximum of requests;
 5) Keys are stored on the .env file, change them if needed (API keys).
 
