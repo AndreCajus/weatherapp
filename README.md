@@ -1,4 +1,4 @@
-###Weather APP
+### Weather APP
 
 ### Setup
 1) Install the dependencies present in the “package.json”;
@@ -25,8 +25,8 @@
 ### Images
 
 1) Main
-<img src="solutionImages/main.png">
+<img src="solutionImages/maini.png">
 
 2) Locality 48h forecast
-<img src="solutionImages/locality.png">
+<img src="solutionImages/localityx.png">
 
