@@ -39,10 +39,11 @@ app.get('/api', (req, res) => {
 
 // POST when a locality is added on the client table, the processed info it is stored on the database object body (for prove of concept)
 app.post('/api', (req, res) => {
+  
   const data = req.body;
   const timestamp = Date.now();
   data.timestamp = timestamp;
-  database.insert(Object.assign({'method' : 'POST', 'status' : 'success', 'rpath' : '/forecast/daily/:city', 'body': [data]}));
+  database.insert(Object.assign({'method' : 'POST', 'status' : 'success', 'rpath' : req.route.path, 'body': [data]}));
   res.json(data);
 });
 
@@ -67,14 +68,14 @@ app.get('/forecast/daily/:city', async (req, res) => {
       //object assing to concat cityname with info of that city, from both api... And latitude and longitude for future use
       res.json(Object.assign({city: city_name, latitude : lat, longitude : lon}, weather_data.daily.data[0]));
       // stores get info on logs
-      database.insert(Object.assign( {'method' : 'GET', 'status' : 'SUCCESS', 'rpath' : '/forecast/daily/:city'}, timestamp));
+      database.insert(Object.assign( {'method' : 'GET', 'status' : 'SUCCESS', 'rpath' : req.route.path}, timestamp));
     }else {
       res.status(400).json({status: 400, message: "Locality does not have related weather information!"});
-      database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/daily/:city'}, timestamp));
+      database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : req.route.path}, timestamp));
     }
   } catch (err) {
     res.status(400).json({status: 400, message: "Locality does not exist!"});
-    database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/daily/:city'}, timestamp));
+    database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : req.route.path}, timestamp));
   }
 });
 
@@ -88,10 +89,10 @@ app.get('/forecast/hourly/:lat/:lon', async (req, res) => {
       const weather_response = await fetch(weather_url);
       const weather_data = await weather_response.json();
       res.json((weather_data.hourly.data));
-      database.insert(Object.assign( {'method' : 'GET', 'status' : 'SUCCESS', 'rpath' : '/forecast/hourly/:lat/:lon'}, timestamp));
+      database.insert(Object.assign( {'method' : 'GET', 'status' : 'SUCCESS', 'rpath' : req.route.path}, timestamp));
   } catch (err) {
     console.log(err);
     res.status(400).json({status: 400, message: "Locality does not have related weather information!"});
-    database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/hourly/:lat/:lon'}, timestamp));
+    database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : req.route.path}, timestamp));
   }
 });

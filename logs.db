@@ -1,0 +1,4 @@
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/daily/:city","_id":"nEkPK7WdNGv5MepB"}
+{"method":"POST","status":"success","rpath":"/forecast/daily/:city","body":[{"city":"Aveiro","city_f":"Aveiro, Baixo Vouga, Centro, 3810-156, Portugal","sunrise":"7:18","sunset":"18:21","temp_min":"8.6","temp_max":"17.7","lat":"40.640496","lon":"-8.6537841","timestamp":1582556613181}],"_id":"J43QCtqMRnb5VFyC"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/hourly/:lat/:lon","_id":"OnvbZCNXCig1RKpE"}
+{"method":"GET","status":"SUCCESS","rpath":"/forecast/hourly/:lat/:lon","_id":"Pn40cnFR0shnKW8r"}
