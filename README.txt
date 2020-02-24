@@ -20,3 +20,11 @@ Implementation
 - The index.html contains all the logic including the JS; 
 - I tested The interface on chrome and Firefox.
 
+Images
+
+-main
+<img src="solutionImages/main.png">
+
+-locality 48h forecast
+<img src="solutionImages/locality.png">
+
