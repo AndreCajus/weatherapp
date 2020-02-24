@@ -1,4 +1,5 @@
 ### Weather APP
+<hr>
 
 ### Setup
 1) Install the dependencies present in the “package.json”;

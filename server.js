@@ -42,7 +42,7 @@ app.post('/api', (req, res) => {
   const data = req.body;
   const timestamp = Date.now();
   data.timestamp = timestamp;
-  database.insert(Object.assign({'method' : 'POST', 'status' : 'success', 'body' : [data]}));
+  database.insert(Object.assign({'method' : 'POST', 'status' : 'success', 'rpath' : '/forecast/daily/:city', 'body': [data]}));
   res.json(data);
 });
 
@@ -70,11 +70,11 @@ app.get('/forecast/daily/:city', async (req, res) => {
       database.insert(Object.assign( {'method' : 'GET', 'status' : 'SUCCESS', 'rpath' : '/forecast/daily/:city'}, timestamp));
     }else {
       res.status(400).json({status: 400, message: "Locality does not have related weather information!"});
-      database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/hourly/:lat/:lon'}, timestamp));
+      database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/daily/:city'}, timestamp));
     }
   } catch (err) {
     res.status(400).json({status: 400, message: "Locality does not exist!"});
-    database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/hourly/:lat/:lon'}, timestamp));
+    database.insert(Object.assign( {'method' : 'GET', 'status' : 'FAILURE', 'rpath' : '/forecast/daily/:city'}, timestamp));
   }
 });
 
