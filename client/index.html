@@ -190,6 +190,17 @@
           }]
         },
         options: {
+          tooltips: {
+            mode: 'single',
+            callbacks: {
+              title: function (tooltipItems) {
+                return tooltipItems[0].xLabel + ' hours';
+              },
+              label: function (tooltipItem) {
+                return 'Temperature: ' + tooltipItem.yLabel + 'ºC';
+              }
+            }
+          },
           scales: {
             yAxes: [{
               scaleLabel: {
@@ -241,6 +252,14 @@
         }]
       },
       options: {
+        tooltips: {
+          mode: 'single',
+          callbacks: {
+            label: function (tooltipItems) {
+              return 'Average temperature: ' + tooltipItems.yLabel + 'ºC';
+            }
+          }
+        },
         scales: {
           yAxes: [{
             ticks: {
@@ -333,7 +352,7 @@
       cell6.innerHTML = `<button type="button" class="btn btn-primary" data-toggle="modal" data-id='${data_post.city_f}' 
       data-whatever="${data_post.city_f}" data-target="#exampleModal" onclick="buildCityChart(${data_post.lat}, ${data_post.lon})"
       data-toggle="tooltip" data-placement="right" title="Press to view the 48h forecast to ${data_post.city_f}">
-      <i class="fa fa-search"></i></button>`
+      <i class="fa fa-eye"></i></button>`
     }
 
     // converts unix to timestamp
