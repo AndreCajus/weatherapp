@@ -158,9 +158,16 @@
     var ctx2 = document.getElementById('myChart2').getContext('2d');
     // init object Chart out, so it can be destroyed when the function is called
     var myLineChart;
+    /* since the program allows a maximum of 10 cities I manually create the RGB insted of generating 
+          (i have random function but since maximum is 10 I rather choose the colors)*/
+    var graph_colors = ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 30, 64, 0.2)', 'rgba(255, 30, 132, 0.2)',
+            'rgba(102, 204, 0, 0.2)', 'rgba(204, 204, 0, 0.2)',];
 
     // builds a chart for each modal call, with the lat lon stored in the btn call
-    async function buildCityChart(lat, lon) {
+    async function buildCityChart(lat, lon, city_id) {
       let response = await fetch(`forecast/hourly/${lat}/${lon}`);
       let data = await response.json();
       // to store json hour values and temperatures
@@ -183,9 +190,6 @@
           datasets: [{
             label: '48 hours forecast (temperature/hour)',
             data: temperatureArr,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-            ],
             borderWidth: 1
           }]
         },
@@ -223,6 +227,7 @@
           }
         }
       });
+      myLineChart.data.datasets[0].backgroundColor = graph_colors[city_id];
       myLineChart.update();
     }
 
@@ -232,21 +237,13 @@
       data: {
         datasets: [{
           label: 'Average Temperature (ºC)',
-          /* since the program allows a maximum of 10 cities I manually create the RGB insted of generating 
-          (i have random function but since maximum is 10 I rather choose the colors)*/
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 30, 64, 0.2)', 'rgba(255, 30, 132, 0.2)',
-            'rgba(134, 30, 64, 0.2)', 'rgba(134, 24, 53, 0.2)',
-          ],
+          backgroundColor: graph_colors,
           borderColor: [
             'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)',
             'rgba(255, 30, 64, 1)', 'rgba(255, 30, 132, 1)',
-            'rgba(134, 30, 64, 1)', 'rgba(134, 24, 53, 1)',
+            'rgba(102, 204, 0, 1)', 'rgba(204, 204, 0, 1)',
           ],
           borderWidth: 1
         }]
@@ -265,6 +262,11 @@
             ticks: {
               beginAtZero: true
             }
+          }],
+          xAxes: [{
+            ticks: {
+            reverse: true
+          }
           }]
         }
       }
@@ -301,7 +303,7 @@
             // creates table entrie
             data_post = { city, city_f, sunrise, sunset, temp_min, temp_max, lat, lon }
             createTableEntrie(data_post);
-            // adds data to graph, label and value and updates
+            // adds data to graph, label and value and updates, and colors that are equal to the average temperature
             chart.data.labels.push(city);
             chart.data.datasets.forEach((dataset) => {
               dataset.data.push(temp_med);
@@ -348,9 +350,9 @@
       cell3.innerHTML = data_post.sunset;
       cell4.innerHTML = data_post.temp_min;
       cell5.innerHTML = data_post.temp_max;
-      //count_cities passes the city info to the model, and onclick it executes the func that with the latitude e longitude builds the graph
+      //count_cities passes the city info to the model, and onclick it executes the func that with the latitude e longitude builds the graph, and current count for colour track
       cell6.innerHTML = `<button type="button" class="btn btn-primary" data-toggle="modal" data-id='${data_post.city_f}' 
-      data-whatever="${data_post.city_f}" data-target="#exampleModal" onclick="buildCityChart(${data_post.lat}, ${data_post.lon})"
+      data-whatever="${data_post.city_f}" data-target="#exampleModal" onclick="buildCityChart(${data_post.lat}, ${data_post.lon}, ${count_cities})"
       data-toggle="tooltip" data-placement="right" title="Press to view the 48h forecast to ${data_post.city_f}">
       <i class="fa fa-eye"></i></button>`
     }
